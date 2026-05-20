@@ -1,0 +1,565 @@
+{
+    "año": 2026,
+    "ultima_actualizacion": "2026-05-20 14:37:27",
+    "source": "ics",
+    "name": "Müllkalender Schlierbach 2026",
+    "eventos": [
+        {
+            "categories": "Recycling Bauhof",
+            "date": "2026-01-03",
+            "summary": "Recycling Bauhof",
+            "type": "Recycling Bauhof"
+        },
+        {
+            "categories": "Recycling Bauhof",
+            "date": "2026-01-07",
+            "summary": "Recycling Bauhof",
+            "type": "Recycling Bauhof"
+        },
+        {
+            "categories": "Recycling Bauhof",
+            "date": "2026-04-01",
+            "summary": "Recycling Bauhof",
+            "type": "Recycling Bauhof"
+        },
+        {
+            "categories": "Recycling Bauhof",
+            "date": "2026-10-07",
+            "summary": "Recycling Bauhof",
+            "type": "Recycling Bauhof"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-01-19",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "Sondermüll-Schadstoffmobil",
+            "date": "2026-01-21",
+            "summary": "Schadstoffmobil",
+            "type": "Sondermüll-Schadstoffmobil"
+        },
+        {
+            "categories": "Sondermüll-Schadstoffmobil",
+            "date": "2026-01-23",
+            "summary": "Schadstoffmobil",
+            "type": "Sondermüll-Schadstoffmobil"
+        },
+        {
+            "categories": "Sondermüll-Schadstoffmobil",
+            "date": "2026-01-27",
+            "summary": "Schadstoffmobil",
+            "type": "Sondermüll-Schadstoffmobil"
+        },
+        {
+            "categories": "ALTPAPIER",
+            "date": "2026-02-02",
+            "summary": "Altpapier",
+            "type": "ALTPAPIER"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-02-09",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "Fälligkeit Grundbesitzabgaben",
+            "date": "2026-02-15",
+            "summary": "Fälligkeit Grundbesitzabgaben",
+            "type": "Fälligkeit Grundbesitzabgaben"
+        },
+        {
+            "categories": "ALTPAPIER",
+            "date": "2026-03-02",
+            "summary": "Altpapier",
+            "type": "ALTPAPIER"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-03-16",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "Sondermüll-Schadstoffmobil",
+            "date": "2026-03-07",
+            "summary": "Schadstoffmobil",
+            "type": "Sondermüll-Schadstoffmobil"
+        },
+        {
+            "categories": "GRÜNSCHNITT",
+            "date": "2026-03-23",
+            "summary": "Grünschnitt",
+            "type": "GRÜNSCHNITT"
+        },
+        {
+            "categories": "ALTPAPIER",
+            "date": "2026-03-30",
+            "summary": "Altpapier",
+            "type": "ALTPAPIER"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-03-31",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-04-13",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "Sperrmüll Anmeldeschluss",
+            "date": "2026-04-13",
+            "summary": "Sperrmüll Anmeldeschluss",
+            "type": "Sperrmüll Anmeldeschluss"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-04-24",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "ALTPAPIER",
+            "date": "2026-04-27",
+            "summary": "Altpapier",
+            "type": "ALTPAPIER"
+        },
+        {
+            "categories": "Sondermüll-Schadstoffmobil",
+            "date": "2026-04-28",
+            "summary": "Schadstoffmobil",
+            "type": "Sondermüll-Schadstoffmobil"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-04-30",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-05-05",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "Fälligkeit Grundbesitzabgaben",
+            "date": "2026-05-15",
+            "summary": "Fälligkeit Grundbesitzabgaben",
+            "type": "Fälligkeit Grundbesitzabgaben"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-05-19",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "ALTPAPIER",
+            "date": "2026-05-27",
+            "summary": "Altpapier",
+            "type": "ALTPAPIER"
+        },
+        {
+            "categories": "Sondermüll-Schadstoffmobil",
+            "date": "2026-05-27",
+            "summary": "Schadstoffmobil",
+            "type": "Sondermüll-Schadstoffmobil"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-05-29",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-06-02",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "Sondermüll-Schadstoffmobil",
+            "date": "2026-06-02",
+            "summary": "Schadstoffmobil",
+            "type": "Sondermüll-Schadstoffmobil"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-06-11",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "ALTPAPIER",
+            "date": "2026-06-22",
+            "summary": "Altpapier",
+            "type": "ALTPAPIER"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-06-24",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-07-01",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-07-10",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-07-22",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "ALTPAPIER",
+            "date": "2026-07-20",
+            "summary": "Altpapier",
+            "type": "ALTPAPIER"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-08-04",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "Sondermüll-Schadstoffmobil",
+            "date": "2026-08-11",
+            "summary": "Schadstoffmobil",
+            "type": "Sondermüll-Schadstoffmobil"
+        },
+        {
+            "categories": "Fälligkeit Grundbesitzabgaben",
+            "date": "2026-08-15",
+            "summary": "Fälligkeit Grundbesitzabgaben",
+            "type": "Fälligkeit Grundbesitzabgaben"
+        },
+        {
+            "categories": "Sperrmüll Anmeldeschluss",
+            "date": "2026-08-20",
+            "summary": "Anmeldeschluss Sperrmüll",
+            "type": "Sperrmüll Anmeldeschluss"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-08-21",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "Sondermüll-Schadstoffmobil",
+            "date": "2026-08-28",
+            "summary": "Schadstoffmobil ",
+            "type": "Sondermüll-Schadstoffmobil"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-09-02",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "ALTPAPIER",
+            "date": "2026-09-14",
+            "summary": "Altpapier",
+            "type": "ALTPAPIER"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-09-15",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "Sondermüll-Schadstoffmobil",
+            "date": "2026-09-17",
+            "summary": "Schadstoffmobil",
+            "type": "Sondermüll-Schadstoffmobil"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-10-01",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "Sondermüll-Schadstoffmobil",
+            "date": "2026-10-01",
+            "summary": "Schadstoffmobil",
+            "type": "Sondermüll-Schadstoffmobil"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-10-12",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-10-23",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-11-06",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "ALTPAPIER",
+            "date": "2026-11-09",
+            "summary": "Altpapier",
+            "type": "ALTPAPIER"
+        },
+        {
+            "categories": "Fälligkeit Grundbesitzabgaben",
+            "date": "2026-11-15",
+            "summary": "Fälligkeit Grundsteuer",
+            "type": "Fälligkeit Grundbesitzabgaben"
+        },
+        {
+            "categories": "GRÜNSCHNITT",
+            "date": "2026-11-16",
+            "summary": "Grünschnitt",
+            "type": "GRÜNSCHNITT"
+        },
+        {
+            "categories": "Sondermüll-Schadstoffmobil",
+            "date": "2026-11-28",
+            "summary": "Schadstoffmobil",
+            "type": "Sondermüll-Schadstoffmobil"
+        },
+        {
+            "categories": "Sperrmüll Anmeldeschluss",
+            "date": "2026-12-03",
+            "summary": "Sperrmüll Anmeldeschluss",
+            "type": "Sperrmüll Anmeldeschluss"
+        },
+        {
+            "categories": "ALTPAPIER",
+            "date": "2026-12-07",
+            "summary": "Altpapier",
+            "type": "ALTPAPIER"
+        },
+        {
+            "categories": "GELBER SACK",
+            "date": "2026-01-06",
+            "summary": "Gelber Sack",
+            "type": "GELBER SACK"
+        },
+        {
+            "categories": "ALTPAPIER",
+            "date": "2026-01-08",
+            "summary": "Altpapier",
+            "type": "ALTPAPIER"
+        },
+        {
+            "categories": "RESTMÜLL",
+            "date": "2026-01-13",
+            "summary": "Restmüll",
+            "type": "RESTMÜLL"
+        },
+        {
+            "categories": "GELBER SACK",
+            "date": "2026-01-30",
+            "summary": "Gelber Sack",
+            "type": "GELBER SACK"
+        },
+        {
+            "date": "2026-01-01",
+            "summary": "Ein frohes Neues Jahr 🎉 wünscht Ihnen ihre Gemein",
+            "type": "Ein frohes Neues Jahr 🎉 wünscht Ihnen ihre Gemein"
+        },
+        {
+            "categories": "RESTMÜLL",
+            "date": "2026-02-10",
+            "summary": "Restmüll",
+            "type": "RESTMÜLL"
+        },
+        {
+            "categories": "GELBER SACK",
+            "date": "2026-02-27",
+            "summary": "Gelber Sack",
+            "type": "GELBER SACK"
+        },
+        {
+            "categories": "RESTMÜLL",
+            "date": "2026-03-10",
+            "summary": "Restmüll",
+            "type": "RESTMÜLL"
+        },
+        {
+            "categories": "GELBER SACK",
+            "date": "2026-03-27",
+            "summary": "Gelber Sack",
+            "type": "GELBER SACK"
+        },
+        {
+            "categories": "RESTMÜLL",
+            "date": "2026-04-07",
+            "summary": "Restmüll",
+            "type": "RESTMÜLL"
+        },
+        {
+            "categories": "GELBER SACK",
+            "date": "2026-04-24",
+            "summary": "Gelber Sack",
+            "type": "GELBER SACK"
+        },
+        {
+            "categories": "RESTMÜLL",
+            "date": "2026-05-05",
+            "summary": "Restmüll",
+            "type": "RESTMÜLL"
+        },
+        {
+            "categories": "GELBER SACK",
+            "date": "2026-05-22",
+            "summary": "Gelber Sack",
+            "type": "GELBER SACK"
+        },
+        {
+            "categories": "RESTMÜLL",
+            "date": "2026-06-10",
+            "summary": "Restmüll",
+            "type": "RESTMÜLL"
+        },
+        {
+            "categories": "GELBER SACK",
+            "date": "2026-06-19",
+            "summary": "Gelber Sack",
+            "type": "GELBER SACK"
+        },
+        {
+            "categories": "RESTMÜLL",
+            "date": "2026-06-30",
+            "summary": "Restmüll",
+            "type": "RESTMÜLL"
+        },
+        {
+            "categories": "GELBER SACK",
+            "date": "2026-07-17",
+            "summary": "Gelber Sack",
+            "type": "GELBER SACK"
+        },
+        {
+            "categories": "RESTMÜLL",
+            "date": "2026-07-28",
+            "summary": "Restmüll",
+            "type": "RESTMÜLL"
+        },
+        {
+            "categories": "GELBER SACK",
+            "date": "2026-08-14",
+            "summary": "Gelber Sack",
+            "type": "GELBER SACK"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-08-12",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "ALTPAPIER",
+            "date": "2026-08-18",
+            "summary": "Altpapier",
+            "type": "ALTPAPIER"
+        },
+        {
+            "categories": "RESTMÜLL",
+            "date": "2026-08-25",
+            "summary": "Restmüll",
+            "type": "RESTMÜLL"
+        },
+        {
+            "categories": "RESTMÜLL",
+            "date": "2026-09-22",
+            "summary": "Restmüll",
+            "type": "RESTMÜLL"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-09-22",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "GELBER SACK",
+            "date": "2026-09-11",
+            "summary": "Gelber Sack",
+            "type": "GELBER SACK"
+        },
+        {
+            "categories": "GELBER SACK",
+            "date": "2026-10-09",
+            "summary": "Gelber Sack",
+            "type": "GELBER SACK"
+        },
+        {
+            "categories": "ALTPAPIER",
+            "date": "2026-10-15",
+            "summary": "Altpapier",
+            "type": "ALTPAPIER"
+        },
+        {
+            "categories": "RESTMÜLL",
+            "date": "2026-10-20",
+            "summary": "Restmüll",
+            "type": "RESTMÜLL"
+        },
+        {
+            "categories": "RESTMÜLL",
+            "date": "2026-11-17",
+            "summary": "Restmüll",
+            "type": "RESTMÜLL"
+        },
+        {
+            "categories": "RESTMÜLL",
+            "date": "2026-12-15",
+            "summary": "Restmüll",
+            "type": "RESTMÜLL"
+        },
+        {
+            "categories": "GELBER SACK",
+            "date": "2026-11-06",
+            "summary": "Gelber Sack",
+            "type": "GELBER SACK"
+        },
+        {
+            "categories": "GELBER SACK",
+            "date": "2026-12-04",
+            "summary": "Gelber Sack",
+            "type": "GELBER SACK"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-11-17",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        },
+        {
+            "categories": "BIOMÜLL",
+            "date": "2026-12-15",
+            "summary": "Biomüll",
+            "type": "BIOMÜLL"
+        }
+    ]
+}

@@ -7,15 +7,15 @@ class BaseScraper(ABC):
 
     @abstractmethod
     def fetch(self):
-        """Descarga los datos crudos (HTML, PDF o ICS) desde la web"""
+        """Dowload raw data (HTML, PDF o ICS)"""
         pass
 
     @abstractmethod
     def parse(self):
-        """Procesa los datos crudos y los convierte a un formato estándar"""
+        """Tramsform raw data to usefull data"""
         pass
 
     @abstractmethod
     def save(self, output_path):
-        """Guarda los datos procesados en el archivo JSON definitivo"""
+        """Save procesed data on Json format"""
         pass
