@@ -4,5 +4,6 @@ __pycache__/
 *.ipynb
 .ipynb_checkpoints/
 *.pyc
+.idea/
 
 core/__pycache__
