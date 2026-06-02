@@ -1,15 +1,18 @@
 import os
 import json
 import datetime
-import glob
+from pathlib import Path
 import yaml
 import requests
+from icalendar import Calendar
 from core.base_scrapper import BaseScraper
 
 class Scrapper(BaseScraper):
     def __init__(self):
-        current_path = os.path.dirname(os.path.abspath(__file__))
-        config_path = os.path.join(current_path, "config.yaml")
+        self.current_path = Path(__file__).resolve().parent
+        self.main_path = self.current_path.parents[1]
+
+        config_path = self.current_path / "config.yaml"
     
         with open(config_path, "r", encoding="utf-8") as f:
                 self.config = yaml.safe_load(f)
@@ -18,48 +21,55 @@ class Scrapper(BaseScraper):
         
         self.online = self.config.get("online_file")
         self.base_url = self.config.get("city_url")
-        self.distrito = self.config.get("distritos")
+        self.distrit = self.config.get("distritos")
         self.name = None
         self.format_parser = None
         self.events = None
+        self.status = False
         
-    def __ics_parser__(self, path) -> list:
-        raw_file = open(path)
+    def _ics_parser(self, path:Path) -> list:
+
         self.format_parser = "ics"
-        events = []
-        while True:
-            line = raw_file.readline()
-            line = line.rstrip('\n\r')
-            sep = line.find(":")
-            key = line[:sep]
-            value = line[sep+1:]
-            
-            if line.startswith("BEGIN:VEVENT"):
-                current_event = {}
-            elif key.lower().startswith("summary"):
-                current_event["summary"] = value
-            elif key.lower().startswith("categories"):
-                current_event["categories"] = value
-            elif key.lower().startswith("dtstart;"):
-                fecha_formateada = f"{value[0:4]}-{value[4:6]}-{value[6:8]}"
-                current_event["date"] = fecha_formateada
-            elif line.startswith("END:VEVENT"):
-                if "categories" in current_event:
-                    current_event["type"] = current_event["categories"]
-                else:
-                    current_event["type"] = current_event["summary"]
-                if "date" in current_event and "type" in current_event:
-                    events.append(current_event)
-            elif line.startswith("X-WR-CALNAME:"):
-                self.city = value
-                
-            if line == 'END:VCALENDAR':
-                break
-        
-        raw_file.close()
-        return events
+        parsed_events = []
+        dt_today = datetime.date.today()
+        with open(path, "r", encoding="utf-8") as f:
+            try:
+                cal = Calendar.from_ical(f.read())
+                self.city = str(cal["X-WR-CALNAME"])
+
+                for component in cal.walk():
+                    if component.name == "VEVENT":
+                        summary = component.get("SUMMARY")
+                        summary = summary.to_ical().decode('utf-8') if hasattr(summary, 'to_ical') else str(
+                            summary)
+
+                        categories = component.get("CATEGORIES")
+                        categories = categories.to_ical().decode('utf-8') if hasattr(categories, 'to_ical') else str(
+                            categories)
+
+                        event_type = categories if categories else summary
+
+                        dtstart = component.get('DTSTART').dt
+                        if type(dtstart) == datetime.datetime:
+                            dtstart = dtstart.date()
+                        days_left = (dtstart - dt_today).days
+                        date_str = dtstart.strftime("%Y-%m-%d") if hasattr(dtstart, 'strftime') else str(dtstart)
+
+                        parsed_events.append({
+                            "summary": summary,
+                            "categories": str(categories) if categories else None,
+                            "date": date_str,
+                            "days_left": days_left,
+                            "type": event_type
+                        })
+
+                self.status = True
+            except Exception as e:
+                print(f"[Error leyendo ICS {path.name}]: {e}")
+
+            return parsed_events
     
-    def __pdf_parser__(self):
+    def _pdf_parser(self):
         self.format_parser = "pdf"
         pass
     
@@ -68,49 +78,59 @@ class Scrapper(BaseScraper):
             session = requests.Session()
             session.headers.update({"User-Agent": "SmartFrame-Agent/1.0"})
         except Exception as e:
-            print(f"[Error Crítico en Scraper]: {e}")
+            print(f"[Critic error on scrapper]: {e}")
             return False
     
     def parse(self):
-        current_path = os.path.dirname(os.path.abspath(__name__))
-        data_path = os.path.join(current_path, "data/raw")
-        
-        os.chdir(data_path)
-        raw_files = glob.glob("*.*")
-        
-        for f in raw_files:
-            if "pdf" in f:
-                print("Actualmente esta funcionalidad no esta disponible")
-                break
-            elif "ics" in f:
-                self.events = self.__ics_parser__(data_path + "/" + f)
-                if not os.path.exists(current_path + "/data/procesed"):
-                    os.makedirs(current_path + "/data/procesed")
-                os.rename(data_path + "/" + f, current_path + "/data/procesed/" + f)
+        raw_dir = self.main_path / "data" / "raw"
+        processed_dir = self.main_path / "data" / "processed"
+
+        if not raw_dir.exists():
+            print(f"[Parse]: La carpeta {raw_dir} no existe.")
+            return
+
+        for file_path in raw_dir.iterdir():
+            if file_path.is_dir():
+                continue
+
+            if file_path.suffix.lower() == ".pdf":
+                print(f"[Parse]: PDF encontrado ({file_path.name}). Esta funcionalidad no está disponible.")
+                continue
+
+            if file_path.suffix.lower() == ".ics":
+                print(f"[Parse]: Procesando {file_path.name}...")
+                self.events = self._ics_parser(file_path)
+
+                if self.status:
+                    processed_dir.mkdir(parents=True, exist_ok=True)
+                    file_path.replace(processed_dir / file_path.name)
                 break
     
     def save(self, output_path=None):
-        os.chdir("..")
-        current_path = os.path.dirname(os.path.abspath(__name__))
-        output_path = os.path.join(current_path, "clean")
-        
-        if self.events:
+        if output_path is None:
+            output_dir = self.main_path / "data" / "clean"
+        else:
+            output_dir = Path(output_path)
+
+        if self.events and self.status:
             data_final = {
-                "año": int(datetime.datetime.now().year),
-                "ultima_actualizacion": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "year": int(datetime.datetime.now().year),
+                "last_update": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 "source": self.format_parser,
                 "name": self.city,
-                "eventos": self.events
+                "events": self.events
             }
-            if not os.path.exists(output_path):
-                os.makedirs(output_path)
-                
-            with open(output_path + "/GarbageCalendar.json", "w", encoding="utf-8") as f:
+
+            output_dir.mkdir(parents=True, exist_ok=True)
+            file_to_save = output_dir / "GarbageCalendar.json"
+
+            with open(file_to_save, "w", encoding="utf-8") as f:
                 json.dump(data_final, f, ensure_ascii=False, indent=4)
+            print(f"[Save]: Datos guardados con éxito en {file_to_save}")
         else:
-            print("No hay eventos para almacenar")
+            print("[Save]: No hay eventos para almacenar.")
     
 if __name__ == "__main__":
-    x = Scrapper()
-    x.parse()
-    x.save()
+    scrapper = Scrapper()
+    scrapper.parse()
+    scrapper.save()
