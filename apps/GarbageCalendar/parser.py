@@ -1,13 +1,11 @@
-import os
 import json
 import datetime
 from pathlib import Path
 import yaml
-import requests
 from icalendar import Calendar
-from core.base_scrapper import BaseScraper
+from core.base_parcer import BaseParcer
 
-class Scrapper(BaseScraper):
+class Parcer(BaseParcer):
     def __init__(self):
         self.current_path = Path(__file__).resolve().parent
         self.main_path = self.current_path.parents[1]
@@ -65,7 +63,7 @@ class Scrapper(BaseScraper):
 
                 self.status = True
             except Exception as e:
-                print(f"[Error leyendo ICS {path.name}]: {e}")
+                self.logger.error(f"[Error leyendo ICS {path.name}]: {e}")
 
             return parsed_events
     
@@ -73,20 +71,12 @@ class Scrapper(BaseScraper):
         self.format_parser = "pdf"
         pass
     
-    def fetch(self):
-        try:
-            session = requests.Session()
-            session.headers.update({"User-Agent": "SmartFrame-Agent/1.0"})
-        except Exception as e:
-            print(f"[Critic error on scrapper]: {e}")
-            return False
-    
     def parse(self):
         raw_dir = self.main_path / "data" / "raw"
         processed_dir = self.main_path / "data" / "processed"
 
         if not raw_dir.exists():
-            print(f"[Parse]: La carpeta {raw_dir} no existe.")
+            self.logger.info(f"[Parse]: La carpeta {raw_dir} no existe.")
             return
 
         for file_path in raw_dir.iterdir():
@@ -94,11 +84,11 @@ class Scrapper(BaseScraper):
                 continue
 
             if file_path.suffix.lower() == ".pdf":
-                print(f"[Parse]: PDF encontrado ({file_path.name}). Esta funcionalidad no está disponible.")
+                self.logger.info(f"[Parse]: PDF encontrado ({file_path.name}). Esta funcionalidad no está disponible.")
                 continue
 
             if file_path.suffix.lower() == ".ics":
-                print(f"[Parse]: Procesando {file_path.name}...")
+                self.logger.info(f"[Parse]: Procesando {file_path.name}...")
                 self.events = self._ics_parser(file_path)
 
                 if self.status:
@@ -126,11 +116,10 @@ class Scrapper(BaseScraper):
 
             with open(file_to_save, "w", encoding="utf-8") as f:
                 json.dump(data_final, f, ensure_ascii=False, indent=4)
-            print(f"[Save]: Datos guardados con éxito en {file_to_save}")
+            self.logger.info(f"[Save]: Datos guardados en {file_to_save}")
         else:
-            print("[Save]: No hay eventos para almacenar.")
+            self.logger.info(f"[Save]: No hay eventos para almacenar.")
     
 if __name__ == "__main__":
-    scrapper = Scrapper()
+    scrapper = Parcer()
     scrapper.parse()
-    scrapper.save()
